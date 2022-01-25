@@ -1,12 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import Button from '@mui/material/Button';
+import AcUnitIcon from '@mui/icons-material/AcUnit';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <p className='text-green-300'>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
@@ -17,6 +19,10 @@ function App() {
         >
           Learn React
         </a>
+        <AcUnitIcon></AcUnitIcon>
+        <Button variant="text">Text</Button>
+        <Button variant="contained">Contained</Button>
+        <Button variant="outlined">Outlined</Button>
       </header>
     </div>
   );
