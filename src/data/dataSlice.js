@@ -122,7 +122,7 @@ export const dataSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(makeAdmin.fulfilled, (state, action) => {
-                console.log('admin added');
+
             })
             .addCase(isAdmin.pending, (state, action) => {
                 state.loading = true;
@@ -139,7 +139,7 @@ export const dataSlice = createSlice({
             })
             .addCase(requestForPost.fulfilled, (state, action) => {
                 state.postLoad = false;
-                console.log(action.payload);
+
             })
             .addCase(findAllRequestPost.pending, (state, action) => {
                 state.postLoad = true;
@@ -148,20 +148,20 @@ export const dataSlice = createSlice({
                 state.postLoad = false;
             })
             .addCase(findAllRequestPost.fulfilled, (state, action) => {
-                console.log(action.payload, 'came');
+
                 state.allRequestPost = action.payload;
                 state.postLoad = false;
             })
             .addCase(deletePost.fulfilled, (state, action) => {
-                console.log(action.payload, 'delete');
+
                 state.allRequestPost = state?.allRequestPost?.filter(post => post._id !== action.payload._id)
                 state.allApprovePost = state?.allApprovePost?.filter(post => post._id !== action.payload._id)
             })
             .addCase(updateStatus.fulfilled, (state, action) => {
-                console.log(action.payload, 'updatete');
+
                 const updatePost = state.allRequestPost.filter(post => post._id === action.payload._id)
                 updatePost[0].status = 'approve';
-                console.log(updatePost);
+
 
             })
             .addCase(getAllApprovePost.pending, (state, action) => {
@@ -171,7 +171,7 @@ export const dataSlice = createSlice({
                 state.postLoad = false;
             })
             .addCase(getAllApprovePost.fulfilled, (state, action) => {
-                console.log(action.payload);
+
                 state.allApprovePost = action.payload;
                 state.postLoad = false;
             })
@@ -182,7 +182,7 @@ export const dataSlice = createSlice({
                 state.postLoad = false;
             })
             .addCase(getBlogs.fulfilled, (state, action) => {
-                console.log(action.payload);
+
                 state.blogs = action.payload.blogs;
                 const count = action.payload.count
                 state.count = count;
@@ -190,14 +190,14 @@ export const dataSlice = createSlice({
                 state.postLoad = false;
             })
             .addCase(cheapTopRate.fulfilled, (state, action) => {
-                console.log(action.payload);
+
                 const blogs = action.payload.blogs;
                 const reSize = () => {
                     for (let t = 0; t < blogs.length; t++) {
                         for (let i = 0; i < blogs.length; i++) {
                             const itCost = parseInt(blogs[t].total_cost)
                             const nextCost = parseInt(blogs[i]?.total_cost)
-                            console.log(itCost, nextCost);
+
                             if (itCost < nextCost) {
                                 [blogs[i], blogs[t]] = [blogs[t], blogs[i]]
 
@@ -225,7 +225,7 @@ export const dataSlice = createSlice({
                 }
                 topRate();
                 state.adminLastBlog = blogs.filter(ele => ele.admin === true).slice(0, 5);
-                console.log(blogs.filter(ele => ele.admin === true), 'admin');
+
 
                 //set state
                 state.cheapTopRate = tenCheap;

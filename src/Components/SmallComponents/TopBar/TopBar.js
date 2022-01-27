@@ -54,7 +54,7 @@ const MainNav = () => {
         else { setColorChange(false) }
         window.addEventListener('scroll', changeNavbarColor);
     }, [pathname])
-    console.log(colorChange);
+
     const noActive = { textDecoration: 'none', color: colorChange ? 'gray' : 'white', borderRadius: '0', transition: 'color .3s' }
     const noActive2 = { textDecoration: 'none', color: 'gray', borderRadius: '0', transition: 'color .3s' }
     const activeStyle = { color: colorChange ? 'black' : 'orange' }

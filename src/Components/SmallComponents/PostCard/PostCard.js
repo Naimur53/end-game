@@ -10,11 +10,11 @@ const PostCard = props => {
     const { date, experience, location, post_date, rating, status, total_cost, PhotoURL, title, category, travelImg, user_email, user_name, _id } = props?.info;
 
     const handleDelete = () => {
-        console.log('deleting');
+
         dispatch(deletePost({ _id }));
     }
     const handleUpdate = () => {
-        console.log('deleting');
+
         dispatch(updateStatus({ _id }));
     }
 

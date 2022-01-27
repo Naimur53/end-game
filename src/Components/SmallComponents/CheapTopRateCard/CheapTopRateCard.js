@@ -6,7 +6,7 @@ const CheapTopRateCard = props => {
     return (
         <div style={{ backgroundImage: `url(${travelImg})` }} className='h-80 bg-center bg-cover'>
             <div style={{ backgroundColor: 'rgba(0,0,0,.5)' }} className='h-full text-white flex flex-col justify-center items-center'>
-                <NavLink to={`/details/${_id}`} className='text-2xl font-osw title'>{title}</NavLink>
+                <NavLink to={`/details/${_id}`} className='text-2xl text-center font-osw title'>{title}</NavLink>
                 <Rating
                     value={rating}
                     readOnly

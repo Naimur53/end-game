@@ -19,7 +19,7 @@ const RightBar = () => {
     useEffect(() => {
         dispatch(cheapTopRate({}));
     }, [])
-    console.log(data.cheapTopRate);
+
 
     return (
         <div>
@@ -32,7 +32,6 @@ const RightBar = () => {
                         "disableOnInteraction": false
                     }}
                     slidesPerView={1}
-                    onSwiper={(swiper) => console.log(swiper, 'se')}
                 >
                     {
                         !data.sideBarLoad ? data.cheapTopRate.map(blog => <SwiperSlide key={blog._id}><CheapTopRateCard info={blog}></CheapTopRateCard></SwiperSlide>) :
@@ -54,7 +53,6 @@ const RightBar = () => {
                         "disableOnInteraction": false
                     }}
                     slidesPerView={1}
-                    onSwiper={(swiper) => console.log(swiper, 'se')}
                 >
                     {
                         !data.sideBarLoad ? data.adminLastBlog.map(blog => <SwiperSlide key={blog._id}><AdminRecentCard info={blog}></AdminRecentCard></SwiperSlide>) :
@@ -66,8 +64,8 @@ const RightBar = () => {
                             </SwiperSlide>)
                     }
                 </Swiper>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 

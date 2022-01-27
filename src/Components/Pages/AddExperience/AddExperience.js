@@ -36,7 +36,7 @@ const AddExperience = () => {
         }
         delete data.travelImgFile
 
-        console.log(data, 'data');
+
         dispatch(requestForPost(data))
         reset();
         alert('Request Send')
@@ -53,7 +53,7 @@ const AddExperience = () => {
                 url: 'https://api.imgbb.com/1/upload',
                 data: body
             }).then(res => {
-                console.log(res.data.data);
+
                 setValue('travelImg', res.data?.data?.url)
             }).finally(() => setImgLoading(false))
         }
@@ -173,7 +173,7 @@ const AddExperience = () => {
                             </Grid>
                             <Grid item xs={12}>
                                 {
-                                    imgLoading ? <button className='p-3  bg-gray-600 text-white w-full'>Loading Image...</button> : <input className='p-3  bg-black text-white w-full' type="submit" value="Request for post " />
+                                    imgLoading ? <button className='p-3  bg-gray-600 text-white w-full'>Loading Image...</button> : <input className='p-3  bg-black text-white w-full' type="submit" value={isAdmin ? 'Post' : "Request for post "} />
                                 }
                             </Grid>
                         </Grid>

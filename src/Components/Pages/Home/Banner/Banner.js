@@ -24,7 +24,6 @@ const Banner = () => {
                 }}
                 slidesPerView={1}
                 onSlideChange={(e) => AOS.refresh(true)}
-                onSwiper={(swiper) => console.log(swiper, 'se')}
             >
                 <SwiperSlide className='h-full '>
                     {({ isActive }) => (

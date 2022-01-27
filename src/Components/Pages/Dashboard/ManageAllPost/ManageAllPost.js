@@ -11,7 +11,7 @@ const ManageAllPost = () => {
     useEffect(() => {
         dispatch(getAllApprovePost());
     }, [])
-    console.log(data.allApprovePost);
+
     return (
         <div className='mt-12'>
             <Grid container spacing={4}>

@@ -8,7 +8,7 @@ const AllBlogs = props => {
     const [page, setPage] = useState(0);
     const data = useSelector(selectData)
     const dispatch = useDispatch();
-    console.log(data.blogs);
+
     useEffect(() => {
         dispatch(resetBlogs())
         if (props.allBlog) {

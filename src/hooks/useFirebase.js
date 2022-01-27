@@ -52,20 +52,20 @@ const useFirebase = () => {
     };
     const signUpWithEmail = (info) => {
         const { name, email, password, location, navigate } = info;
-        console.log(info);
+
         // sendSignInLinkToEmail(auth, email, actionCodeSettings)
         //     .then(() => {
         //         // The link was successfully sent. Inform the user.
         //         // Save the email locally so you don't need to ask the user for it again
         //         // if they open the link on the same device.
         //         window.localStorage.setItem('emailForSignIn', email);
-        //         console.log("send");
+        //         
         //         // ...
         //     })
         //     .catch((error) => {
         //         const errorCode = error.code;
         //         const errorMessage = error.message;
-        //         console.log(error);
+        //         
         //         // ...
         //     });
         createUserWithEmailAndPassword(auth, email, password)
@@ -104,7 +104,7 @@ const useFirebase = () => {
     //     // Get the email if available. This should be available if the user completes
     //     // the flow on the same device where they started it.
     //     let email = window.localStorage.getItem('emailForSignIn');
-    //     console.log('if');
+    //     
     //     if (!email) {
     //         // User opened the link on a different device. To prevent session fixation
     //         // attacks, ask the user to provide the associated email again. For example:
@@ -114,7 +114,7 @@ const useFirebase = () => {
     //     signInWithEmailLink(auth, email, window.location.href)
     //         .then(({ user }) => {
     //             // Clear email from storage.
-    //             console.log(user, 'result');
+    //             
     //             dispatch(putUserToDb({
     //                 displayName: user.displayName,
     //                 email: user.email,
@@ -132,7 +132,7 @@ const useFirebase = () => {
     //         .catch((error) => {
     //             // Some error occurred, you can inspect the code: error.code
     //             // Common errors could be invalid email and invalid or expired OTPs.
-    //             console.log(error);
+    //             
     //         });
     // }
     const logInWithEmail = info => {
@@ -144,7 +144,7 @@ const useFirebase = () => {
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                console.log(error);
+
             });
     }
 

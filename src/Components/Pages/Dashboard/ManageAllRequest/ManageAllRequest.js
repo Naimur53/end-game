@@ -10,7 +10,7 @@ const ManageAllRequest = () => {
     useEffect(() => {
         dispatch(findAllRequestPost());
     }, [])
-    console.log(data.allRequestPost);
+
     return (
         <div className='mt-12'>
             <Grid container spacing={4}>

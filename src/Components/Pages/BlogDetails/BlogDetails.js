@@ -12,7 +12,7 @@ const BlogDetails = () => {
         setDetailsLoading(true)
         axios.get(`https://serene-temple-54072.herokuapp.com/details/${id}`)
             .then(res => {
-                console.log(res.data);
+
                 setDetails(res.data)
             }).finally(res => { setDetailsLoading(false) })
     }, [])
