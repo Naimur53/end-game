@@ -26,15 +26,17 @@ const BlogDetails = () => {
     }
     return (
         <div>
-            <div style={{ backgroundImage: `url(${travelImg})` }} className='h-96 bg-center bg-cover relative'>
-                <div className='absolute top-0 bg-white mt-4 ml-4 px-3 py-2 rounded-lg'>{category}</div>
+            <div style={{ backgroundImage: `url(${travelImg})` }} className='h-96 bg-center bg-cover '>
             </div>
             <Container >
 
                 <Grid container spacing={4}>
                     <Grid item md={8}>
                         <div>
-                            <small className=' pt-2 text-gray-600 flex items-center'><EventAvailableIcon fontSize='small'></EventAvailableIcon><span className='ml-2 italic  text-[16px]'>{date}</span></small>
+                            <div className='flex justify-between'>
+                                <small className=' pt-2 text-gray-600 flex items-center'><EventAvailableIcon fontSize='small'></EventAvailableIcon><span className='ml-2 italic  text-[16px]'>{date}</span></small>
+                                <div className=' bg-white shadow font-bold mt-4 ml-4 px-3 py-2 rounded-lg'>{category}</div>
+                            </div>
                             <h2 className='text-4xl font-osw py-5'>{title}</h2>
                             <p className='text-lg'>
                                 {experience}

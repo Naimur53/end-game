@@ -19,11 +19,11 @@ const PostCard = props => {
     }
 
     return (
-        <div data-aos="zoom-out-right">
+        <div data-aos="fade-up">
             <div className='flex flex-col'>
                 <div className='relative'>
                     <img className='w-100' src={travelImg} alt="" />
-                    <div className='absolute bg-black top-0 px-3 py-1 rounded-lg ml-2 mt-4'>
+                    <div className='absolute bg-black top-0 px-3 py-1 mt-3'>
                         <h2 className='text-white py-0'>{category}</h2>
                     </div>
                 </div>

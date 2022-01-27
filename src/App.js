@@ -30,6 +30,7 @@ function App() {
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/signup' element={<SignUp></SignUp>}></Route>
           <Route path='/dashboard' element={<AdminRoute><Dashboard></Dashboard></AdminRoute>}>
+            <Route path='/dashboard' element={<AdminRoute><ManageAllRequest></ManageAllRequest></AdminRoute>}></Route>
             <Route path='/dashboard/manageAllRequest' element={<AdminRoute><ManageAllRequest></ManageAllRequest></AdminRoute>}></Route>
             <Route path='/dashboard/manageAllPost' element={<AdminRoute><ManageAllPost></ManageAllPost></AdminRoute>}></Route>
             <Route path='/dashboard/addBlog' element={<AdminRoute><AddExperience></AddExperience></AdminRoute>}></Route>

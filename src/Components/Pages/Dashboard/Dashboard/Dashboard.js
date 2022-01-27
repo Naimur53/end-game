@@ -44,12 +44,7 @@ function Dashboard(props) {
             <Divider />
             <List>
                 <Box>
-                    <ListItem component={NavLink} activeStyle={{ "color": 'red' }} to={`${url}/overview`} button >
-                        <ListItemIcon>
-                            <ManageSearchIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'Over view'} />
-                    </ListItem>
+
                     <ListItem component={NavLink} activeStyle={{ "color": 'red' }} to={`${url}/makeAdmin`} button >
                         <ListItemIcon>
                             <AdminPanelSettingsIcon />
@@ -58,7 +53,7 @@ function Dashboard(props) {
                     </ListItem>
                     <ListItem component={NavLink} activeStyle={{ "color": 'red' }} to={`${url}/manageAllPost`} button >
                         <ListItemIcon>
-                            <RateReviewIcon />
+                            <ManageSearchIcon />
                         </ListItemIcon>
                         <ListItemText primary={'Manage all Post'} />
                     </ListItem>
@@ -94,10 +89,10 @@ function Dashboard(props) {
             >
                 <Toolbar >
 
-                    <Typography variant='h5' sx={{ flexGrow: 1 }}><span className='main_title'>MPQ</span> Drone</Typography>
+                    <Typography variant='h5' sx={{ flexGrow: 1 }}><span className='main_title'>Travel</span> Go</Typography>
                     <Typography sx={{ display: { xs: 'none', md: 'block' }, }} >
                         <NavLink style={{ textDecoration: 'none', color: 'gray' }} to="/home"><Button color="inherit">Home</Button></NavLink>
-                        <NavLink style={{ textDecoration: 'none', color: 'gray' }} to="/explore"><Button color="inherit">Explore</Button></NavLink>
+                        <NavLink style={{ textDecoration: 'none', color: 'gray' }} to="/blogs"><Button color="inherit">Blogs</Button></NavLink>
                     </Typography>
                     <IconButton
                         color="inherit"

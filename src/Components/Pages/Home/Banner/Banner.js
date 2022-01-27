@@ -57,7 +57,7 @@ const Banner = () => {
                                                     data-aos-easing="linear"
                                                     data-aos-duration="1000"
                                                     className={isActive ? 'aos-init aos-animate' : 'aos-init'}>
-                                                    <NavLink className='title2 font-osw text-xl inline-block p-4 bg-green-900 transition-all hover:translate-x-4 text-white ' to="/addExperience" > Add your experience</NavLink>
+                                                    <NavLink className='title2 font-osw text-xl inline-block p-4 bg-green-900 transition-all hover:translate-x-4 text-white ' to="/addExperience" > Share your experience</NavLink>
                                                 </div>
                                             </div>
                                         </Grid>
@@ -85,13 +85,13 @@ const Banner = () => {
                                                     data-aos-easing="linear"
                                                     data-aos-duration="500"
                                                     className={isActive ? 'aos-init aos-animate' : 'aos-init'}>
-                                                    <h2 className='text-5xl uppercase text-white font-osw mb-4'> Learn From other tourist than make plan</h2>
+                                                    <h2 className='text-5xl uppercase text-white font-osw mb-4'> Believe you can and you’re halfway there.</h2>
                                                 </div>
                                                 <div data-aos="fade-left"
                                                     data-aos-easing="linear"
                                                     data-aos-duration="800"
                                                     data-aos-delay="3000" className={isActive ? 'aos-init aos-animate' : 'aos-init'}>
-                                                    <h2 className='mb-5 font-os text-lg text-gray-50 '> Since time immemorial, humans and animals alike; have valued the importance of travel. </h2>
+                                                    <h2 className='mb-5 font-os text-lg text-gray-50 '> Do not allow people to dim your shine because they are blinded. Tell them to put some sunglasses on. </h2>
                                                 </div>
 
                                                 <div
@@ -128,13 +128,13 @@ const Banner = () => {
                                                     data-aos-easing="linear"
                                                     data-aos-duration="500"
                                                     className={isActive ? 'aos-init aos-animate' : 'aos-init'}>
-                                                    <h2 className='text-5xl uppercase text-white font-osw mb-4'> Learn From other tourist than make plan</h2>
+                                                    <h2 className='text-5xl uppercase text-white font-osw mb-4'>Spread love everywhere you go what you do</h2>
                                                 </div>
                                                 <div data-aos="fade-left"
                                                     data-aos-easing="linear"
                                                     data-aos-duration="800"
                                                     data-aos-delay="3000" className={isActive ? 'aos-init aos-animate' : 'aos-init'}>
-                                                    <h2 className='mb-5 font-os text-lg text-gray-50 '> Since time immemorial, humans and animals alike; have valued the importance of travel. </h2>
+                                                    <h2 className='mb-5 font-os text-lg text-gray-50 '> Be courageous. Challenge orthodoxy. Stand up for what you believe in. When you are in your rocking chair </h2>
                                                 </div>
 
                                                 <div

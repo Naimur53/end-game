@@ -9,18 +9,21 @@ const AddAdmin = () => {
     const { register, handleSubmit, reset, setValue, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         dispatch(makeAdmin(data))
+        reset();
+
     }
     return (
-        <div>
-            <Container>
+        <div className='mt-10 flex h-full justify-center items-center'>
+            <div className=''>
+                <h2 className='text-2xl py-4'>Make a user to admin with email </h2>
                 <form onSubmit={handleSubmit(onSubmit)} >
                     <input placeholder='Enter email'
                         type="email"
-                        className="  w-full bg-transparent border-b py-2 border-red-100 px-2"
+                        className=" shadow w-full bg-transparent border-b py-2 border-red-100 px-2"
                         {...register("email", { required: true })} />
-                    <input type="submit" value={'Make Admin'} />
+                    <input className='mt-4 shadow w-full bg-transparent border-b py-2 border-red-100 cursor-pointer' type="submit" value={'Make Admin'} />
                 </form>
-            </Container>
+            </div>
         </div>
     );
 };

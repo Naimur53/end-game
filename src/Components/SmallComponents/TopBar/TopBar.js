@@ -26,29 +26,35 @@ const MainNav = () => {
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
-    const [colorChange, setColorChange] = useState(false);
+    const [colorChange, setColorChange] = useState(true);
+
 
     const changeNavbarColor = () => {
-        if (window.scrollY >= 500) {
-            setColorChange(true);
+        if (pathname === '/addExperience') {
+            setColorChange(true)
+        }
+        else if (pathname === '/home' || pathname === '/' || pathname === '/blogs') {
+            if (window.scrollY >= 400) {
+                setColorChange(true);
+            }
+            else {
+                setColorChange(false)
+            }
+
         }
         else {
-            setColorChange(false)
+            window.removeEventListener('scroll', changeNavbarColor);
+            setColorChange(true)
         }
     };
     useEffect(() => {
-
-        if (pathname === '/home' || pathname === '/' || pathname === '/blogs') {
-            window.addEventListener('scroll', changeNavbarColor);
-
-        }
-        else {
+        if (pathname === '/addExperience' || pathname === '/login' || pathname === '/signUp') {
             setColorChange(true)
-            window.removeEventListener('scroll', changeNavbarColor);
         }
-
+        else { setColorChange(false) }
+        window.addEventListener('scroll', changeNavbarColor);
     }, [pathname])
-
+    console.log(colorChange);
     const noActive = { textDecoration: 'none', color: colorChange ? 'gray' : 'white', borderRadius: '0', transition: 'color .3s' }
     const noActive2 = { textDecoration: 'none', color: 'gray', borderRadius: '0', transition: 'color .3s' }
     const activeStyle = { color: colorChange ? 'black' : 'orange' }
@@ -71,7 +77,7 @@ const MainNav = () => {
                     >
                         <MenuIcon sx={{ color: colorChange ? 'gray' : 'white' }} />
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'gray', textAlign: { xs: 'center', md: 'left' } }}>
+                    <Typography variant="h6" component="div" style={noActive} sx={{ flexGrow: 1, color: 'gray', textAlign: { xs: 'center', md: 'left' } }}>
                         <span className='main_title'>TRAVEL</span> GO
                     </Typography>
                     <Box sx={{

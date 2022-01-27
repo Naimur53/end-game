@@ -5,6 +5,7 @@ const initialState = {
     user: {},
     loading: true,
     postLoad: false,
+    sideBarLoad: false,
     isAdmin: false,
     allRequestPost: [],
     allApprovePost: [],
@@ -140,10 +141,16 @@ export const dataSlice = createSlice({
                 state.postLoad = false;
                 console.log(action.payload);
             })
+            .addCase(findAllRequestPost.pending, (state, action) => {
+                state.postLoad = true;
+            })
+            .addCase(findAllRequestPost.rejected, (state, action) => {
+                state.postLoad = false;
+            })
             .addCase(findAllRequestPost.fulfilled, (state, action) => {
                 console.log(action.payload, 'came');
                 state.allRequestPost = action.payload;
-
+                state.postLoad = false;
             })
             .addCase(deletePost.fulfilled, (state, action) => {
                 console.log(action.payload, 'delete');
@@ -157,9 +164,22 @@ export const dataSlice = createSlice({
                 console.log(updatePost);
 
             })
+            .addCase(getAllApprovePost.pending, (state, action) => {
+                state.postLoad = true;
+            })
+            .addCase(getAllApprovePost.rejected, (state, action) => {
+                state.postLoad = false;
+            })
             .addCase(getAllApprovePost.fulfilled, (state, action) => {
                 console.log(action.payload);
                 state.allApprovePost = action.payload;
+                state.postLoad = false;
+            })
+            .addCase(getBlogs.pending, (state, action) => {
+                state.postLoad = true;
+            })
+            .addCase(getBlogs.rejected, (state, action) => {
+                state.postLoad = false;
             })
             .addCase(getBlogs.fulfilled, (state, action) => {
                 console.log(action.payload);
@@ -167,7 +187,7 @@ export const dataSlice = createSlice({
                 const count = action.payload.count
                 state.count = count;
                 state.pageCount = Math.ceil(count / 10);
-
+                state.postLoad = false;
             })
             .addCase(cheapTopRate.fulfilled, (state, action) => {
                 console.log(action.payload);

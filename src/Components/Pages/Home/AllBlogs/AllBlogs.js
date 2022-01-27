@@ -1,4 +1,4 @@
-import { Container, Grid } from '@mui/material';
+import { Container, Grid, Skeleton } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBlogs, resetBlogs, selectData } from '../../../../data/dataSlice';
@@ -22,12 +22,24 @@ const AllBlogs = props => {
     }, [page])
     return (
         <div>
-            <Grid container spacing={1}>
+            <Grid container spacing={2}>
                 {
-                    data.blogs.map(post => <Grid item xs={12} md={3} key={post._id}>
+                    !data.postLoad ? data.blogs.map(post => <Grid item xs={12} md={3} key={post._id}>
                         <PostCard info={post} ></PostCard>
-
-                    </Grid>)
+                    </Grid>) :
+                        [...Array(10).keys()].map(num => <Grid
+                            item xs={12} md={3} key={num}
+                        >
+                            <div className=''>
+                                <Skeleton variant="rectangular"
+                                    height={260} />
+                                <Skeleton className='mt-2' variant="rectangular"
+                                    height={23} />
+                                <Skeleton className='mt-3' variant="rectangular"
+                                    width={140}
+                                    height={23} />
+                            </div>
+                        </Grid>)
                 }
             </Grid>
             {
