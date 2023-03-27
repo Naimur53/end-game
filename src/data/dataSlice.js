@@ -22,77 +22,77 @@ const initialState = {
 export const saveUserToDb = createAsyncThunk(
     'saveUserToDb/user',
     async (info) => {
-        const response = await axios.post(`https://serene-temple-54072.herokuapp.com/user`, info);
+        const response = await axios.post(`https://end-game-server-production.up.railway.app/user`, info);
         return response.data
     }
 )
 export const putUserToDb = createAsyncThunk(
     'data/putUserToDb',
     async (info) => {
-        const response = await axios.put(`https://serene-temple-54072.herokuapp.com/user`, info);
+        const response = await axios.put(`https://end-game-server-production.up.railway.app/user`, info);
         return response.data
     }
 )
 export const makeAdmin = createAsyncThunk(
     'data/userAdmin',
     async (info) => {
-        const response = await axios.put(`https://serene-temple-54072.herokuapp.com/user/makeAdmin`, info);
+        const response = await axios.put(`https://end-game-server-production.up.railway.app/user/makeAdmin`, info);
         return response.data
     }
 )
 export const isAdmin = createAsyncThunk(
     'data/isAdmin',
     async (info) => {
-        const response = await axios.get(`https://serene-temple-54072.herokuapp.com/user/${info.email}`);
+        const response = await axios.get(`https://end-game-server-production.up.railway.app/user/${info.email}`);
         return response.data
     }
 )
 export const requestForPost = createAsyncThunk(
     'data/requestForPost',
     async (info) => {
-        const response = await axios.post(`https://serene-temple-54072.herokuapp.com/requestForPost`, info);
+        const response = await axios.post(`https://end-game-server-production.up.railway.app/requestForPost`, info);
         return response.data
     }
 )
 export const findAllRequestPost = createAsyncThunk(
     'data/findAllRequestPost',
     async () => {
-        const response = await axios.get(`https://serene-temple-54072.herokuapp.com/findAllRequestPost`);
+        const response = await axios.get(`https://end-game-server-production.up.railway.app/findAllRequestPost`);
         return response.data
     }
 )
 export const deletePost = createAsyncThunk(
     'data/deletePost',
     async (info) => {
-        const response = await axios.delete(`https://serene-temple-54072.herokuapp.com/deletePost/${info._id}`);
+        const response = await axios.delete(`https://end-game-server-production.up.railway.app/deletePost/${info._id}`);
         return response.data
     }
 )
 export const updateStatus = createAsyncThunk(
     'data/updateStatus',
     async (info) => {
-        const response = await axios.put(`https://serene-temple-54072.herokuapp.com/updateStatus/${info._id}`);
+        const response = await axios.put(`https://end-game-server-production.up.railway.app/updateStatus/${info._id}`);
         return response.data
     }
 )
 export const getAllApprovePost = createAsyncThunk(
     'data/getAllPost',
     async (info) => {
-        const response = await axios.get(`https://serene-temple-54072.herokuapp.com/allApprovePost`);
+        const response = await axios.get(`https://end-game-server-production.up.railway.app/allApprovePost`);
         return response.data
     }
 )
 export const getBlogs = createAsyncThunk(
     'data/getBlogs',
     async (info) => {
-        const response = await axios.get(`https://serene-temple-54072.herokuapp.com/getBlogs?size=${info.size}&page=${info.page}`);
+        const response = await axios.get(`https://end-game-server-production.up.railway.app/getBlogs?size=${info.size}&page=${info.page}`);
         return response.data
     }
 )
 export const cheapTopRate = createAsyncThunk(
     'data/cheapTopRate',
     async (info) => {
-        const response = await axios.get(`https://serene-temple-54072.herokuapp.com/getBlogs?size=${info.size}&page=${info.page}`);
+        const response = await axios.get(`https://end-game-server-production.up.railway.app/getBlogs?size=${info.size}&page=${info.page}`);
         return response.data
     }
 )

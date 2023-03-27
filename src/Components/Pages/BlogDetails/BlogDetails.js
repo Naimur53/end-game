@@ -10,7 +10,7 @@ const BlogDetails = () => {
     const [detailsLoading, setDetailsLoading] = useState(true);
     useEffect(() => {
         setDetailsLoading(true)
-        axios.get(`https://serene-temple-54072.herokuapp.com/details/${id}`)
+        axios.get(`https://end-game-server-production.up.railway.app/details/${id}`)
             .then(res => {
 
                 setDetails(res.data)
